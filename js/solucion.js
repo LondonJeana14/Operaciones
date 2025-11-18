@@ -1,15 +1,11 @@
-// ==========================================
-// Función genérica para mostrar mensajes
-// ==========================================
+
 function mostrarResultado(tipo, idContenedor, texto) {
     const mensaje = document.getElementById(idContenedor);
     mensaje.className = `alert alert-${tipo}`;
     mensaje.textContent = texto;
 }
 
-// ==========================================
-// 1. Costo del parque de diversiones
-// ==========================================
+
 function calcularParque(idContenedor) {
     const edad = parseInt(document.getElementById("edad").value);
 
@@ -29,9 +25,7 @@ function calcularParque(idContenedor) {
     mostrarResultado("success", idContenedor, `Costo de entrada: $${precio}`);
 }
 
-// ==========================================
-// 2. Categoría según el código del empleado
-// ==========================================
+
 function evaluarCodigo(idContenedor) {
     const codigo = document.getElementById("codigo").value;
 
@@ -50,9 +44,7 @@ function evaluarCodigo(idContenedor) {
     mostrarResultado("success", idContenedor, `Categoría: ${categoria}`);
 }
 
-// ==========================================
-// 3. Pendiente entre dos puntos
-// ==========================================
+
 function calcularPendiente(idContenedor) {
     const x1 = parseFloat(document.getElementById("x1").value);
     const y1 = parseFloat(document.getElementById("y1").value);
@@ -74,9 +66,6 @@ function calcularPendiente(idContenedor) {
     mostrarResultado("success", idContenedor, `Pendiente m = ${m}`);
 }
 
-// ==========================================
-// 4. Evaluación del clima
-// ==========================================
 function evaluarClima(idContenedor) {
     const t = parseInt(document.getElementById("temp").value);
     const h = parseInt(document.getElementById("hum").value);
