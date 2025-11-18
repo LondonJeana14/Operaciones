@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/styles.css">
+    <title>Pendiente - Taller 1</title>
+</head>
+<body>
+    <h2>Problema 3: Cálculo de la pendiente</h2>
+
+    <label>X1: </label><input type="number" id="x1"><br>
+    <label>Y1: </label><input type="number" id="y1"><br>
+    <label>X2: </label><input type="number" id="x2"><br>
+    <label>Y2: </label><input type="number" id="y2"><br><br>
+
+    <button onclick="calcularPendiente()">Calcular</button>
+
+    <h3 id="resultado"></h3>
+
+<script>
+function calcularPendiente() {
+    let x1 = parseFloat(document.getElementById("x1").value);
+    let y1 = parseFloat(document.getElementById("y1").value);
+    let x2 = parseFloat(document.getElementById("x2").value);
+    let y2 = parseFloat(document.getElementById("y2").value);
+
+    let m = (y2 - y1) / (x2 - x1);
+
+    document.getElementById("resultado").innerHTML = "Pendiente m = " + m;
+}
+</script>
+
+</body>
+<footer>
+    <p>&copy; 2025 Taller de Programación-jeana London</p>
+</footer>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/styles.css">
+    <title>Problema 2 - Categoría del empleado</title>
+</head>
+
+<body>
+
+    <h2>Problema 2: Categoría del empleado</h2>
+
+    <label>Código (3 dígitos): </label><br>
+    <input type="text" id="codigo" maxlength="3" placeholder="Ej: 248"><br><br>
+
+    <button onclick="evaluar()">Evaluar</button>
+
+    <h3 id="resultado"></h3>
+
+<!-- ================= S C R I P T ================= -->
+<script>
+function evaluar() {
+    let c = document.getElementById("codigo").value.trim();
+
+    if (c.length !== 3 || isNaN(c)) {
+        document.getElementById("resultado").innerHTML = "Código inválido";
+        return;
+    }
+
+    // Contar dígitos pares
+    let pares = 0;
+
+    for (let i = 0; i < 3; i++) {
+        let d = parseInt(c[i]);
+        if (d % 2 === 0) pares++;
+    }
+
+    let categoria = "";
+
+    if (pares === 3) categoria = "Director General";
+    else if (pares === 2) categoria = "Directivo";
+    else if (pares === 1) categoria = "Staff";
+    else categoria = "Seguridad";
+
+    document.getElementById("resultado").innerHTML = "Categoría: " + categoria;
+}
+</script>
+<footer>
+    <p>&copy; 2025 Taller de Programación-jeana London</p>
+</footer>
+
+</body>
+</html>

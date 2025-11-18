@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/styles.css">
+    <title>Parque - Taller 1</title>
+</head>
+<body>
+    <h2>Problema 1: Costo de entrada al parque</h2>
+
+    <label>Edad de la persona: </label>
+    <input type="number" id="edad">
+    <button onclick="calcular()">Calcular costo</button>
+
+    <h3 id="resultado"></h3>
+
+<script>
+function calcular() {
+    let edad = parseInt(document.getElementById("edad").value);
+    let precio = 0;
+
+    if (edad > 1 && edad < 4) precio = 0;
+    else if (edad >= 4 && edad <= 8) precio = 2;
+    else if (edad >= 9 && edad <= 16) precio = 5;
+    else if (edad >= 17 && edad <= 35) precio = 7;
+    else if (edad > 35) precio = 10;
+
+    document.getElementById("resultado").innerHTML = "Costo de entrada: $" + precio;
+}
+</script>
+
+</body>
+<footer>
+    <p>&copy; 2025 Taller de Programación-jeana London</p>
+</footer>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Clima - Taller 1</title>
+
+</head>
+<body>
+    <h2>Problema 4: Estado del clima</h2>
+
+    <label>Temperatura (°C): </label>
+    <input type="number" id="temp"><br>
+
+    <label>Humedad (%): </label>
+    <input type="number" id="hum"><br><br>
+
+    <button onclick="clima()">Evaluar clima</button>
+
+    <h3 id="resultado"></h3>
+
+<script>
+function clima() {
+    let t = parseInt(document.getElementById("temp").value);
+    let h = parseInt(document.getElementById("hum").value);
+    let r = "";
+
+    if (t < 10) r = "Clima frío";
+    else if (t >= 10 && t <= 25 && h < 60) r = "Clima templado y seco";
+    else if (t >= 10 && t <= 25 && h >= 60) r = "Clima templado y húmedo";
+    else if (t >= 26 && t <= 35) r = "Clima cálido";
+    else if (t > 35) r = "Clima caluroso extremo, mantente hidratado";
+    else r = "Valores fuera de rango, verifica los datos";
+
+    document.getElementById("resultado").innerHTML = r;
+}
+</script>
+
+</body>
+<footer>
+    <p>&copy; 2025 Taller de Programación-jeana London</p>
+</footer>
+</html>
